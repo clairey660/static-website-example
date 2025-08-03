@@ -1,0 +1,15 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+  build:
+    commands:
+  post_build:
+    commands:
+      - echo "Deploying to S3"
+      - aws s3 sync ./ s3://www.csce412cbennett.xyz --delete --cache-control max-age=0,no-cache
+
+artifacts:
+  files:
+    - "**/*"
