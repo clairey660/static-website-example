@@ -10,7 +10,7 @@ phases:
       - echo "Deploying to S3"
       - aws s3 cp index.html s3://www.csce412cbennett.xyz/index.html --content-type text/html --cache-control max-age=0,no-cache
       - aws s3 sync ./ s3://www.csce412cbennett.xyz --exclude "index.html" --delete --cache-control max-age=0,no-cache
-      - aws cloudfront create-invalidation --distribution-id YOUR_DISTRIBUTION_ID --paths "/*"
+      - aws cloudfront create-invalidation --distribution-id E15DU5FBXQN41G --paths "/*"
 
 artifacts:
   files:
